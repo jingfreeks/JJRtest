@@ -1,20 +1,12 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useDeleteBookInfo} from '../react-query/useDeleteBookInfo';
-import {supabase} from '../utils/supabase';
 
 const ItemListScreens = props => {
   const {data} = props;
   const {title, author, publishedDate, genre, id} = data;
   const {mutateAsync: handleDeleteId} = useDeleteBookInfo();
-  //   const handleDeleteId = async () => {
-  //     const {data, status} = await supabase
-  //       .from('bookinfo')
-  //       .delete()
-  //       .eq('id', id)
-  //       .select();
-  //     console.log('data', data);
-  //   };
+
   return (
     <View className="flex-row">
       <View className="flex-1 p-2">

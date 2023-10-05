@@ -1,10 +1,10 @@
 import {create} from 'zustand';
-import {Job} from '@/api/fixlers/models';
-import JobList from '@/api/methods/jobsList';
 
 type BookInfoState = {
-  jobs: Job[];
-  isLoadingJobs: boolean;
+  date: string;
+  title: string;
+  author: string;
+  genre: string;
 };
 
 type BookInfoActions = {
@@ -36,9 +36,3 @@ const useBookInfoStore = create<BookInfoState & BookInfoActions>(
 );
 
 export default useBookInfoStore;
-
-// const [date, setDate] = useState<string>(new Date());
-// const [open, setOpen] = useState<boolean>(false);
-// const [title, setTitle] = useState<string>('');
-// const [author, setAuthor] = useState<string>('');
-// const [genre, setGenre] = useState<string>('');
